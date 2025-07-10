@@ -137,24 +137,85 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+  <section id="hero" class="hero section dark-background" style="position: relative; overflow: hidden;">
 
-      <img src="assets/img/kirill-martynov-h9pdWDuaLvs-unsplash.jpg
-" alt="" data-aos="fade-in" class="">
+  <!-- Background Image -->
+  <img src="assets/img/bg.jpg" alt="Hero Background"  >
+ 
+  <style>
+    .cricket-photo-wrapper {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 6px solid grey; /* Default: Grey border */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+      overflow: hidden;
+      margin: 0 auto 20px auto;
+      position: relative;
+      transition: border 0.3s ease;
+      cursor: pointer;
+    }
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2 style="color: #ffffff;">Prince Sharma</h2>
-        <p style="color: #ffffff;">
-          I'm
-          <span class="typed" data-typed-items="Data Analyst, Data Scientist, Natural Language Processing Specialist" style="color: #fcfbfb;">
-            Designer
-          </span>
-          <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
-        </p>
-      </div>
+    .cricket-photo-wrapper img.cricket-photo {
+      width: 100%;
+      height: 120%;
 
+       /* Keeps hair and full photo in view */
+      border-radius: 50%;
+    }
 
-    </section><!-- /Hero Section -->
+    .cricket-photo-wrapper::before,
+    .cricket-photo-wrapper::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 90%;
+      background: #ccc;
+      left: 50%;
+      transform: rotate(20deg);
+      transform-origin: center;
+    }
+
+    .cricket-photo-wrapper::after {
+      transform: rotate(-20deg);
+    }
+
+    /* Clicked state turns border to blue */
+    .cricket-photo-wrapper.active {
+      border-color: #007BFF;
+    }
+  </style>
+
+  <!-- JavaScript for toggle effect -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const wrapper = document.querySelector('.cricket-photo-wrapper');
+      wrapper.addEventListener('click', function () {
+        wrapper.classList.toggle('active');
+      });
+    });
+  </script>
+
+  <!-- Hero Section Content -->
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <!-- Rounded Profile Image -->
+    <div class="cricket-photo-wrapper">
+      <img src="assets/img/hero.jpg" alt="Prince Sharma" class="cricket-photo">
+    </div>
+
+    <h2 style="color: #ffffff;">👑Prince Sharma</h2>
+    <p style="color: #ffffff;">
+      I'm
+      <span class="typed" data-typed-items="Data Analyst, Data Scientist, NLP Developer" style="color: #fcfbfb;">
+        Designer
+      </span>
+      <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
+    </p>
+  </div>
+</section>
+<!-- /Hero Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">
