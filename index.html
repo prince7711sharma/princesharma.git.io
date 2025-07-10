@@ -140,8 +140,8 @@
   <section id="hero" class="hero section dark-background" style="position: relative; overflow: hidden;">
 
   <!-- Background Image -->
-  <img src="assets/img/bg.jpg" alt="Hero Background"  >
- 
+  <img src="assets/img/bg.jpg" alt="Hero Background" data-aos="fade-in" style="width: 100%; height: auto; position: absolute; top: 0; left: 0; z-index: -1;">
+
   <style>
     .cricket-photo-wrapper {
       width: 200px;
@@ -159,35 +159,32 @@
 
     .cricket-photo-wrapper img.cricket-photo {
       width: 100%;
-      height: 120%;
-
-       /* Keeps hair and full photo in view */
+      height: 100%;
+      object-fit: contain;
       border-radius: 50%;
     }
 
-    .cricket-photo-wrapper::before,
-    .cricket-photo-wrapper::after {
-      content: '';
-      position: absolute;
-      width: 2px;
-      height: 90%;
-      background: #ccc;
-      left: 50%;
-      transform: rotate(20deg);
-      transform-origin: center;
-    }
-
-    .cricket-photo-wrapper::after {
-      transform: rotate(-20deg);
-    }
-
-    /* Clicked state turns border to blue */
     .cricket-photo-wrapper.active {
-      border-color: #007BFF;
+      border-color: #007BFF; /* Blue on click */
+    }
+
+    .hero-name {
+      text-align: center;
+      color: #ffffff;
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .hero-role {
+      text-align: center;
+      color: #fcfbfb;
+      font-size: 18px;
+      margin-top: 5px;
     }
   </style>
 
-  <!-- JavaScript for toggle effect -->
+  <!-- Toggle Border Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const wrapper = document.querySelector('.cricket-photo-wrapper');
@@ -200,21 +197,21 @@
   <!-- Hero Section Content -->
   <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-    <!-- Rounded Profile Image -->
+    <!-- Profile Image -->
     <div class="cricket-photo-wrapper">
-      <img src="assets/img/hero.jpg" alt="Prince Sharma" class="cricket-photo">
+      <img src="assets/img/my-profile-img.jpg" alt="Prince Sharma" class="cricket-photo">
     </div>
 
-    <h2 style="color: #ffffff;">👑Prince Sharma</h2>
-    <p style="color: #ffffff;">
-      I'm
-      <span class="typed" data-typed-items="Data Analyst, Data Scientist, Natural Language Processing Specialist" style="color: #fcfbfb;">
-        
-      </span>
+    <!-- Name and Role -->
+    <h2 class="hero-name">👑Prince Sharma</h2>
+    <p class="hero-role">
+      I'm <span class="typed" data-typed-items="Data Analyst, Data Scientist, NLP Specialist"></span>
       <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
     </p>
+
   </div>
 </section>
+
 <!-- /Hero Section -->
 
     <!-- About Section -->
