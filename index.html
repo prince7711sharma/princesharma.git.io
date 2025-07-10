@@ -147,7 +147,7 @@
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      border: 6px solid grey; /* Default: Grey border */
+      border: 6px solid grey;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       background-color: #fff;
       overflow: hidden;
@@ -165,7 +165,7 @@
     }
 
     .cricket-photo-wrapper.active {
-      border-color: #007BFF; /* Blue on click */
+      border-color: #007BFF;
     }
 
     .hero-name {
@@ -182,6 +182,28 @@
       font-size: 18px;
       margin-top: 5px;
     }
+
+    .hero-socials {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .hero-socials a {
+      color: #ffffff;
+      font-size: 24px;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    .hero-socials a:hover {
+      color: #007BFF;
+    }
+
+    .bi-streamlit {
+      content: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Streamlit_logo_2020.svg');
+      height: 24px;
+      vertical-align: middle;
+    }
   </style>
 
   <!-- Toggle Border Script -->
@@ -196,21 +218,27 @@
 
   <!-- Hero Section Content -->
   <div class="container" data-aos="fade-up" data-aos-delay="100">
-
     <!-- Profile Image -->
     <div class="cricket-photo-wrapper">
       <img src="assets/img/hero.jpg" alt="Prince Sharma" class="cricket-photo">
     </div>
 
     <!-- Name and Role -->
-    <h2 class="hero-name">👑Prince Sharma</h2>
+    <h2 class="hero-name">👑 Prince Sharma</h2>
     <p class="hero-role">
       I'm <span class="typed" data-typed-items="Data Analyst, Data Scientist, NLP Specialist"></span>
       <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
     </p>
 
+    <!-- Social Media Icons -->
+    <div class="hero-socials">
+      <a href="https://github.com/prince7711sharma" target="_blank"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/prince-sharma-57a748360/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="https://share.streamlit.io/user/prince7711sharma" target="_blank"><i class="bi-streamlit"></i></a>
+    </div>
   </div>
 </section>
+
 
 <!-- /Hero Section -->
 
