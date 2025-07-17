@@ -137,24 +137,110 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+  <section id="hero" class="hero section dark-background" style="position: relative; overflow: hidden;">
 
-      <img src="assets/img/kirill-martynov-h9pdWDuaLvs-unsplash.jpg
-" alt="" data-aos="fade-in" class="">
+  <!-- Background Image -->
+  <img src="assets/img/bg.jpg" alt="Hero Background" data-aos="fade-in">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2 style="color: #ffffff;">Prince Sharma</h2>
-        <p style="color: #ffffff;">
-          I'm
-          <span class="typed" data-typed-items="Data Analyst, Data Scientist, Natural Language Processing Specialist" style="color: #fcfbfb;">
-            Designer
-          </span>
-          <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
-        </p>
-      </div>
+  <style>
+    .cricket-photo-wrapper {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 6px solid grey;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+      overflow: hidden;
+      margin: 0 auto 20px auto;
+      position: relative;
+      transition: border 0.3s ease;
+      cursor: pointer;
+    }
+
+    .cricket-photo-wrapper img.cricket-photo {
+      width: 100%;
+      height: 120%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .cricket-photo-wrapper.active {
+      border-color: #007BFF;
+    }
+
+    .hero-name {
+      text-align: center;
+      color: #ffffff;
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .hero-role {
+      text-align: center;
+      color: #fcfbfb;
+      font-size: 18px;
+      margin-top: 5px;
+    }
+
+    .hero-socials {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .hero-socials a {
+      color: #ffffff;
+      font-size: 24px;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    .hero-socials a:hover {
+      color: #007BFF;
+    }
+
+    .bi-streamlit {
+      content: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Streamlit_logo_2020.svg');
+      height: 24px;
+      vertical-align: middle;
+    }
+  </style>
+
+  <!-- Toggle Border Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const wrapper = document.querySelector('.cricket-photo-wrapper');
+      wrapper.addEventListener('click', function () {
+        wrapper.classList.toggle('active');
+      });
+    });
+  </script>
+
+  <!-- Hero Section Content -->
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <!-- Profile Image -->
+    <div class="cricket-photo-wrapper">
+      <img src="assets/img/hero.jpg" alt="Prince Sharma" class="cricket-photo">
+    </div>
+
+    <!-- Name and Role -->
+    <h2 class="hero-name">👑 Prince Sharma</h2>
+    <p class="hero-role">
+      I'm <span class="typed" data-typed-items="Data Analyst, Data Scientist, NLP Specialist"></span>
+      <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
+    </p>
+
+    <!-- Social Media Icons -->
+    <div class="hero-socials">
+      <a href="https://github.com/prince7711sharma" target="_blank"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/prince-sharma-57a748360/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="https://share.streamlit.io/user/prince7711sharma" target="_blank"><i class="bi-streamlit"></i></a>
+    </div>
+  </div>
+</section>
 
 
-    </section><!-- /Hero Section -->
+<!-- /Hero Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">
