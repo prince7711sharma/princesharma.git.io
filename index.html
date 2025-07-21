@@ -1,307 +1,464 @@
+<!-- SAVE AS: index.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>👑 Prince – Aspiring Data Scientist</title>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>👑 Prince – Aspiring AI Developer</title>
 
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Favicon -->
+  <link href="assets/img/favicon.png" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet" />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/css/main.css" rel="stylesheet" />
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
-
-<body class="index-page">
-
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <head>
   <style>
-    /* Custom border for profile image */
-    .profile-img img {
-      border: 2px solid black;
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: #0b0f19;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header.top-navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #111;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .top-navbar .container.navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
-      transition: box-shadow 0.3s ease;
+      border: 2px solid #fff;
     }
 
-    .profile-img img:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px #007bff; /* orange glow on focus */
-    }
-
-    /* Active nav link color */
-    .navbar a.nav-link.active {
-      color: #007bff;
+    .site-name {
+      font-size: 18px;
       font-weight: bold;
-      border-bottom: 2px solid #007bff;
+      color: #fff;
     }
 
-    /* Optional hover effect for nav links */
-    .navbar a.nav-link:hover {
-      color: #007bff;
+    .navmenu ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    .navmenu ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .navmenu ul li a:hover,
+    .navmenu ul li a.active {
+      color: #00bfff;
+      border-bottom: 2px solid #00bfff;
+    }
+
+    .resume-btn-nav {
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #ffffff;
+      background-color: transparent;
+      border: 1px solid #00c3ff;
+      border-radius: 16px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* Hero Section */
+    #hero {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      background-color: black;
+    }
+
+    #particles-js {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .hero-flex-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 100px;
+      flex-wrap: wrap;
+      gap: 80px;
+      z-index: 3;
+      position: relative;
+    }
+
+    .hero-left {
+      flex: 1;
+      min-width: 280px;
+      color: white;
+      text-align: left;
+      transform: translateX(-200px);
+    }
+
+    .hero-name {
+      font-size: 48px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .first-name {
+      background: linear-gradient(90deg, #00c3ff, #00ffc3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .last-name {
+      background: linear-gradient(90deg, #00ffc3, #00c3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .name-divider {
+      width: 120px;
+      height: 3px;
+      background: linear-gradient(to right, #00c3ff, #00ffc3);
+      margin: 12px 0 20px;
+      border-radius: 2px;
+      animation: grow 2s ease-out forwards;
+      transform-origin: left;
+    }
+
+    @keyframes grow {
+      0% { width: 0; opacity: 0; }
+      100% { width: 120px; opacity: 1; }
+    }
+
+    .additional-line {
+      font-size: 14px;
+      color: whitesmoke;
+      font-style: italic;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease forwards;
+      opacity: 0;
+      line-height: 1.5;
+    }
+
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    .hero-role {
+      font-size: 18px;
+      color: #00ffcc;
+      background-color: rgba(0, 255, 204, 0.05);
+      padding: 10px 15px;
+      border-left: 4px solid #00ffcc;
+      width: fit-content;
+      animation: blinkText 1s infinite;
+    }
+
+    @keyframes blinkText { 50% { opacity: 0.7; } }
+
+    .orbit-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+
+    .orbit-ring {
+      width: 100%;
+      height: 100%;
+      border: 1px dashed rgba(0, 195, 255, 0.4);
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: rotateRing 8s linear infinite;
+      z-index: 1;
+    }
+
+    .orbit-dot {
+      width: 10px;
+      height: 10px;
+      background: #00c3ff;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .orbit-dot1 {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .orbit-dot2 {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
+
+    .cricket-photo-wrapper {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      border: 3px solid #00c3ff;
+      overflow: hidden;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+      animation: pulse-glow 3s ease-in-out infinite;
+      box-shadow: 0 0 15px rgba(0, 195, 255, 0.4);
+    }
+
+    .cricket-photo-wrapper img {
+      width: 100%;
+      height: 99%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    @keyframes rotateRing {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 15px rgba(0, 195, 255, 0.3); }
+      50% { box-shadow: 0 0 30px rgba(0, 195, 255, 0.6); }
+      100% { box-shadow: 0 0 15px rgba(0, 195, 255, 0.3); }
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 992px) {
+      .hero-flex-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 30px 20px;
+        gap: 40px;
+      }
+
+      .hero-left {
+        transform: none;
+        text-align: center;
+      }
+
+      .hero-name {
+        font-size: 30px;
+      }
+
+      .orbit-container {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+      }
+
+      .cricket-photo-wrapper {
+        width: 170px;
+        height: 170px;
+      }
+
+      .navmenu ul {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #111;
+        z-index: 999;
+        padding: 10px 0;
+      }
+
+      .navmenu ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .resume-btn-nav {
+        display: none;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Profile Image -->
-  <div class="profile-img">
-    <img src="assets/img/hero.jpg" alt="Profile" class="img-fluid rounded-circle" tabindex="0">
-  </div>
+  <!-- Top Navbar -->
+  <header class="top-navbar">
+    <div class="container navbar-container">
+      <div class="logo">
+        <img src="assets/img/hero.jpg" alt="Profile" />
+        <span class="site-name">Prince Sharma</span>
+      </div>
 
-</body>
+      <nav class="navmenu" id="menu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#portfolio">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
+      <a href="assets/resume.pdf" download class="resume-btn-nav">📄 Resume</a>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">Prince Sharma</h1>
-    </a>
-
-    <div class="social-links text-center">
-      <a href="https://twitter.com/princeshar39964" class="twitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.instagram.com/prince7711sharma" class="instagram" target="_blank"><i
-          class="bi bi-instagram"></i></a>
-      <a href="https://github.com/prince7711sharma" class="github" target="_blank"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/prince-sharma-57a748360/" class="linkedin" target="_blank"><i
-          class="bi bi-linkedin"></i></a>
-      <a href="https://share.streamlit.io/user/prince7711sharma" class="streamlit" target="_blank" title="Streamlit">
-        <i class="bi bi-box-arrow-up-right"></i>
-      </a>
+      <!-- Mobile Menu Icon -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="bi bi-list"></i>
+      </div>
     </div>
-
-
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Project</a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Domains</a></li>
-        <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i
-              class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#">Dropdown 1</a></li>
-            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
-                  class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Deep Dropdown 1</a></li>
-                <li><a href="#">Deep Dropdown 2</a></li>
-                <li><a href="#">Deep Dropdown 3</a></li>
-                <li><a href="#">Deep Dropdown 4</a></li>
-                <li><a href="#">Deep Dropdown 5</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Dropdown 2</a></li>
-            <li><a href="#">Dropdown 3</a></li>
-            <li><a href="#">Dropdown 4</a></li>
-          </ul>
-        </li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-      </ul>
-    </nav>
-
   </header>
 
-  <main class="main">
+  <!-- Hero Section -->
+  <section id="hero" class="hero section dark-background">
+    <img src="assets/img/backg.jpg" alt="Hero Background" class="bg-img">
+    <div id="particles-js"></div>
 
-    <!-- Hero Section -->
- <section id="hero" class="hero section dark-background" style="position: relative; overflow: hidden;">
-      <!-- Background Image -->
-      <img src="assets/img/backg.jpg" alt="Hero Background" class="bg-img">
+    <div class="hero-flex-container">
+      <div class="hero-left">
+        <h2 class="hero-name">
+          <span class="first-name">Prince</span><br>
+          <span class="last-name">Sharma</span>
+        </h2>
+        <div class="name-divider"></div>
+        <div class="additional-line">
+          <p>Turning data into insight</p>
+          <p>with precision and passion</p>
+        </div>
+        <p class="hero-role">
+          I'm <span class="typed" data-typed-items="Data Analyst, Data Scientist, NLP Developer"></span>
+        </p>
+      </div>
 
-      <!-- Particles (Neuron-like animation) -->
-      <div id="particles-js"></div>
-
-      <style>
-        .bg-img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          z-index: 0;
-        }
-
-        #particles-js {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 1;
-        }
-
-        .cricket-photo-wrapper {
-          width: 200px;
-          height: 200px;
-          border-radius: 50%;
-          border: 3px solid grey;
-          box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-          overflow: hidden;
-          margin: 0 auto 20px auto;
-          position: relative;
-          z-index: 3;
-        }
-
-        .cricket-photo-wrapper img {
-          width: 100%;
-          height: 99%;
-          object-fit: contain;
-          border-radius: 50%;
-        }
-
-        .hero-name,
-        .hero-role {
-          text-align: center;
-          color: #ffffff;
-          z-index: 3;
-          position: relative;
-        }
-
-        .hero-name {
-          font-size: 28px;
-          font-weight: bold;
-        }
-
-        .hero-role {
-          font-size: 18px;
-          margin-top: 5px;
-        }
-
-        .resume-btn {
-          display: inline-block;
-          margin: 20px auto 0;
-          padding: 12px 28px;
-          font-size: 16px;
-          font-weight: 600;
-          color: #fff;
-          background: linear-gradient(135deg, #00c3ff, #0077ff);
-          border: none;
-          border-radius: 30px;
-          text-decoration: none;
-          box-shadow: 0 0 10px rgba(0, 195, 255, 0.6), 0 0 20px rgba(0, 119, 255, 0.4);
-          transition: all 0.4s ease-in-out;
-          position: relative;
-          z-index: 3;
-        }
-
-        .resume-btn:hover {
-          box-shadow: 0 0 20px rgba(0, 195, 255, 0.9), 0 0 30px rgba(0, 119, 255, 0.7);
-          transform: scale(1.05);
-        }
-
-        .resume-container {
-          text-align: center;
-          z-index: 3;
-          position: relative;
-        }
-      </style>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="orbit-container">
+        <div class="orbit-ring">
+          <div class="orbit-dot orbit-dot1"></div>
+          <div class="orbit-dot orbit-dot2"></div>
+        </div>
         <div class="cricket-photo-wrapper">
           <img src="assets/img/hero.jpg" alt="Prince Sharma">
         </div>
-
-        <h2 class="hero-name">👑 Prince Sharma</h2>
-        <p class="hero-role">
-          I'm <span class="typed" data-typed-items="Data Analyst, Data Scientist, NLP Developer"></span>
-          <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
-        </p>
-
-        <!-- Resume Button -->
-        <div class="resume-container">
-          <a href="assets/resume.pdf" class="resume-btn" download>📄 Download Resume</a>
-        </div>
       </div>
-
-      <!-- Scripts -->
-      <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-      <script>
-        // Neuron-like animation with particles
-        particlesJS("particles-js", {
-          "particles": {
-            "number": {
-              "value": 70,
-              "density": { "enable": true, "value_area": 800 }
-            },
-            "color": { "value": "#ffffff" },
-            "shape": { "type": "circle" },
-            "opacity": { "value": 0.4, "random": false },
-            "size": { "value": 3, "random": true },
-            "line_linked": {
-              "enable": true,
-              "distance": 150,
-              "color": "#ffffff",
-              "opacity": 0.4,
-              "width": 1
-            },
-            "move": {
-              "enable": true,
-              "speed": 2,
-              "direction": "none",
-              "random": false,
-              "straight": false,
-              "bounce": false
-            }
-          },
-          "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-              "onhover": { "enable": true, "mode": "grab" },
-              "onclick": { "enable": true, "mode": "push" }
-            },
-            "modes": {
-              "grab": { "distance": 140, "line_linked": { "opacity": 0.7 } },
-              "push": { "particles_nb": 4 }
-            }
-          },
-          "retina_detect": true
-        });
-      </script>
-  
-
-    <!-- Social Media Icons -->
-    <div class="hero-socials">
-      <a href="https://github.com/prince7711sharma" target="_blank"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/prince-sharma-57a748360/" target="_blank"><i class="bi bi-linkedin"></i></a>
-      <a href="https://share.streamlit.io/user/prince7711sharma" target="_blank"><i class="bi-streamlit"></i></a>
     </div>
-   </section>
+  </section>
 
-<!-- /Hero Section -->
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    new Typed('.typed', {
+      strings: document.querySelector('.typed').getAttribute('data-typed-items').split(','),
+      typeSpeed: 70,
+      backSpeed: 40,
+      backDelay: 2000,
+      loop: true
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 70, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.4 },
+        "size": { "value": 3, "random": true },
+        "line_linked": {
+          "enable": true, "distance": 150,
+          "color": "#ffffff", "opacity": 0.4, "width": 1
+        },
+        "move": { "enable": true, "speed": 2 }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "push" }
+        },
+        "modes": {
+          "grab": { "distance": 140, "line_linked": { "opacity": 0.7 } },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    }
+
+    document.addEventListener('click', (e) => {
+      const menu = document.getElementById('menu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
+
 
     <!-- About Section -->
       <!-- About Section -->
